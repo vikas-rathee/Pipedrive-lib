@@ -2,8 +2,7 @@ var express = require("express");
 var router = express.Router();
 var notesController = require("./controllers/notesController");
 var personController = require("./controllers/personController");
-
-
+var webhookController = require("./controllers/webhookController");
 
 
 router.post("/addPerson", personController.addPerson);
@@ -17,6 +16,8 @@ router.delete("/deletePersonById/:pid", personController.deletePersonById);
 
 router.post("/addNotes", notesController.addNotes);
 router.get("/getAllNotes", notesController.getAllNotes);
+
+router.post("/webhook", webhookController.getPersonDetails);
 
 
 
